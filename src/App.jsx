@@ -1,13 +1,13 @@
 import "./App.css";
-//import { BsArrowRight } from "react-icons/bs";
-import AboutPage from "./pages/about";
-import Portfolio from "./pages/portfolio";
+
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
   return (
     <>
-      <AboutPage />
-      <Portfolio />
+      <Header/>
+      <Main />
     </>
   );
 }
