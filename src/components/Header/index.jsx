@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-scroll";
 
 function Header() {
 
@@ -19,18 +20,17 @@ function Header() {
 
     return(
         <>
-            <div className="w-full bg-black h-20 border-b-4 border-green-400 flex items-center fixed top-0 left-0">
-                <div className="w-screen md:w-11/12 lg:w-11/12 xl:w-8/12 2xl:w-7/12 m-auto flex flex-row justify-between">
+            <div className="w-full bg-black h-20 border-b-2 border-green-400 flex items-center fixed top-0 left-0">
+                <div className="w-screen md:w-11/12 lg:w-11/12 xl:w-8/12 2xl:w-8/12 m-auto flex flex-row justify-between">
                     <div className="text-white text-2xl grow flex items-center pl-4">
                         Lucas Vale
                     </div>
 
-                    <ul className="w-2/5 md:w-3/6 hidden sm:block pr-4">
+                    <ul className="w-5/12 xl:w-4/12 hidden sm:block pr-4">
                         <li className="flex flex-row flex justify-between" >
-                            <a href="#Home" className="text-white text-lg">Home</a>
-                            <a href="#Projects" className="text-white text-lg">Projects</a>
-                            <a href="#Contact" className="text-white text-lg">Contact</a>
-                            <a href="#Switch" className="text-white text-lg">Switch</a>
+                            <Link activeClass="active" to="home" spy={true} smooth={true} offset={-70} duration={500} className="text-white text-lg hover:cursor-pointer">Home</Link>
+                            <Link activeClass="active" to="projetos" spy={true} smooth={true} offset={-70} duration={500} className="text-white text-lg hover:cursor-pointer">Projetos</Link>
+                            <Link activeClass="active" to="contatos" spy={true} smooth={true} offset={-70} duration={500} className="text-white text-lg hover:cursor-pointer">Contatos</Link>                            
                         </li>
                     </ul>
 
@@ -44,9 +44,9 @@ function Header() {
                             isOpen &&
                             <div className={`absolute right-3 z-10 mt-2 w-40 origin-top-right rounded-md bg-gray-700 shadow-lg ring-1 ring-green-900 ring-opacity-5 focus:outline-none animate-open-menu`} role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                             <div className="py-1 " role="none">
-                                <a href="#home" class="text-gray-100 block px-4 py-2 text-lg" role="menuitem" tabindex="-1" id="menu-item-0">Home</a>
-                                <a href="#projects" class="text-gray-100 block px-4 py-2 text-lg" role="menuitem" tabindex="-1" id="menu-item-1">Projetos</a>
-                                <a href="#contact" class="text-gray-100 block px-4 py-2 text-lg mb-1" role="menuitem" tabindex="-1" id="menu-item-2">Contato</a>
+                                <Link activeClass="active" to="home" smooth={true} offset={-70} duration={500} class="text-gray-100 block px-4 py-2 text-lg hover:cursor-pointer" onClick={handleToggle}>Home</Link>
+                                <Link activeClass="active" to="projetos" smooth={true} offset={-70} duration={500} class="text-gray-100 block px-4 py-2 text-lg hover:cursor-pointer" onClick={handleToggle}>Projetos</Link>
+                                <Link activeClass="active" to="contatos" smooth={true} offset={-70} duration={500} class="text-gray-100 block px-4 py-2 text-lg mb-1 hover:cursor-pointer" onClick={handleToggle}>Contato</Link>
                             </div> 
                         </div> 
                         }
